@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <head>
 <title>Cambi gruppo Senato XVIII</title>
 <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
@@ -20,7 +19,7 @@
   
 <div id="main-wrapper">
 <div id="sidebar">
-<div id="title">Visualizzazione dei cambi di gruppo parlamentare al Senato durante la XVIII legislatura</div>
+<div id="title">Visualizzazione dei cambi di gruppo parlamentare al Senato durante la XVIII legislatura (al 2022-08-04)</div>
 <div id="current_time">2018-3-23</div>
 <div id="speed">
 <div id="block_container">
@@ -117,7 +116,7 @@ var svg = d3.select("#chart").append("svg")
     .attr("height", height);
 
 //Data loading   
-d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48785/raw/2a7aacd82de111aea6ec0c1165c9b4ca09bbc682/senato18', function(data) {
+d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48785/raw/973ebcfc75ca6baa3eccce80c03e94bf5b967ae8/senato18', function(data) {
 	data.forEach(function(d) {
 		var day_array = d.day.split(",");
 		var activities = [];
@@ -250,7 +249,7 @@ d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48
 			});
 	
 		// Update time
-		var end_time = 1923
+		var end_time = 1961
 		var true_time = curr_time % end_time;
 		d3.select("#current_time").text(daysToDate(true_time));
 		
@@ -395,7 +394,7 @@ function readablePercent(n) {
 
 // Day. Data is days from 2018-03-23.
 function daysToDate(m) {
-    m = Math.min(m,1561);
+    m = Math.min(m,1596);
     var d = new Date("2018-03-23");
     d.setDate(d.getDate()+m);
     var y = d.getFullYear();
