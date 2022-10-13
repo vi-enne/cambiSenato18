@@ -19,7 +19,7 @@
   
 <div id="main-wrapper">
 <div id="sidebar">
-<div id="title">Visualizzazione dei cambi di gruppo parlamentare al Senato durante la XVIII legislatura (al 2022-09-20)</div>
+<div id="title">Visualizzazione dei cambi di gruppo parlamentare al Senato durante la XVIII legislatura</div>
 <div id="current_time">2018-3-23</div>
 <div id="speed">
 <div id="block_container">
@@ -92,6 +92,7 @@ var time_notes = [
 	{ "start_time": 1406, "stop_time": 1466, "note": "Si forma per un giorno il gruppo CAL-Idv" },
 	{ "start_time": 1496, "stop_time": 1540, "note": "Nasce CAL-PC-Idv" },
 	{ "start_time": 1555, "stop_time": 1650, "note": "Nasce Insieme Per il Futuro-CD" },
+	{ "start_time": 1665, "stop_time": 2029, "note": "Fine XVIII legislatura della Repubblica Italiana" },
 ];
 var notes_index = 0;
 
@@ -116,7 +117,7 @@ var svg = d3.select("#chart").append("svg")
     .attr("height", height);
 
 //Data loading   
-d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48785/raw/bef1307a372656add02d9437b8d9412fbd69cb10/senato18', function(data) {
+d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48785/raw/50ecc1507f2bf1cc35b4fe776e34ab73a12bddb2/senato18', function(data) {
 	data.forEach(function(d) {
 		var day_array = d.day.split(",");
 		var activities = [];
@@ -249,7 +250,7 @@ d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48
 			});
 	
 		// Update time
-		var end_time = 2008
+		var end_time = 2030
 		var true_time = curr_time % end_time;
 		d3.select("#current_time").text(daysToDate(true_time));
 		
@@ -394,7 +395,7 @@ function readablePercent(n) {
 
 // Day. Data is days from 2018-03-23.
 function daysToDate(m) {
-    m = Math.min(m,1643);
+    m = Math.min(m,1665);
     var d = new Date("2018-03-23");
     d.setDate(d.getDate()+m);
     var y = d.getFullYear();
