@@ -117,7 +117,7 @@ var svg = d3.select("#chart").append("svg")
     .attr("height", height);
 
 //Data loading   
-d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48785/raw/50ecc1507f2bf1cc35b4fe776e34ab73a12bddb2/senato18', function(data) {
+d3.csv('https://gist.githubusercontent.com/vi-enne/d2132a60b8580bf15dab94f787e48785/raw/8611bf63894051d60076199df61c90d1cd518524/senato18', function(data) {
 	data.forEach(function(d) {
 		var day_array = d.day.split(",");
 		var activities = [];
